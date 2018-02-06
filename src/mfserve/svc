@@ -1,0 +1,309 @@
+# MFSERVE service table
+#
+#	The format of entries are:
+#
+#	<service>:
+#		program= /usr/bin/prog,
+#		args=	arg0 arg1,
+#		user=	uucp,
+#		grouprog=	other,
+#		opts=	options,
+#		access=	netgroup(s)
+#
+#
+#
+#	The following interpolations are available:
+#
+# local
+#		%V	FINGERS version string
+#		%R	FINGERS program root
+#		%S	search-name
+#		%N	local nodename
+#		%D	local domainname
+#		%H	local hostname
+#
+# connection
+#		%P	socket peername (if available)
+#		%{ipaddr}	IP address (if available)
+#
+# service
+#		%s	service
+#		%{ss}	subservice
+#		%a	service arguments (if available)
+#
+#	The following interpolations are made on some authenticating 
+#	servers:
+#
+# authentication
+#		%h	originating host (if known)
+#		%u	network username (if known)
+#		%p	network password (if known)
+#
+#
+# Environment variables are interpolated with:
+#
+#	${VAR}
+#
+# where <VAR> is an environment varialble.
+#
+#
+# Built-in servers:
+#
+#	There are some built-in servers on some of the listener daemon
+#	programs.  Some of these are listed below.  These internal
+#	servers can be overridden by making an entry with the same
+#	service name in this file.
+#
+# HELP:
+#	**BUILT-IN** ('tcpmuxd' only)
+#
+#	This is a 'tcpmux' (by appropriate RFC) service requirement.
+#
+# TIME:
+#	**BUILT-IN** ('tcpmuxd' only)
+#
+#	This is the same as INET 'time' service.
+#
+# DAYTIME:
+#	**BUILT-IN** ('tcpmuxd' only)
+#
+#	This is the same as INET 'daytime' service.
+#
+#
+#
+
+
+# various queries (access-restrict most all of these)
+
+
+#daytime:
+#	file= /usr/extra/var/daytime.txt,
+#	prog= daytime
+
+
+# general information
+
+iotd:
+	file= /etc/issue,
+	so= lkcmd,
+	a= issue -k finger
+
+motd:
+	file= /etc/motd,
+	so= lkcmd,
+	a= motd -u guest
+
+cotd:
+	file= /etc/cotd,
+	so= lkcmd,
+	a= <commandment -db ten +%{ss}>
+
+votd:
+	file= /etc/votd,
+	so= lkcmd,
+	a= <bibleverse -o bookname,indent +%{ss}>
+
+hotd:
+	file= /etc/votd,
+	so= lkcmd,
+	a= <calyear -o default +%{ss}>
+
+qotd:
+	file= /etc/qotd,
+	so= lkcmd,
+	a= qotd %{ss}
+
+issue:
+	file= /etc/issue,
+	so= lkcmd,
+	a= issue -k finger
+
+quote:
+	so= lkcmd,
+	a= qotd -o termout=1 -T text %{ss}
+
+calday:
+	so= lkcmd,
+	a= <calyear -o default %{ss}>
+
+calyear:
+	so= lkcmd,
+	a= <calyear -o default %{ss}>
+
+hols:
+	so= lkcmd,
+	a= <holiday +%{ss}>
+
+systat:
+	prog= systatd
+
+netstat:
+	prog= netstatd
+
+dict:
+	prog= /usr/add-on/gnu/bin/dict,
+	a= dict %{ss}
+
+who:
+	access= rc ece,
+	prog= ${LOCAL}/bin/who,
+	a= who
+
+wn:
+	access= default rc ece,
+	so= lkcmd:wn,
+	prog= wn
+
+w:
+	access= rc ece,
+	prog= w
+
+ps:
+	access= rc ece,
+	a= ps -af
+
+logusers:
+	access= rc ece,
+	prog= logusers
+
+msinfo:
+	prog= msinfo,
+	a= msinfo %{ss}
+
+uptime:
+	prog= uptime
+
+bibleq:
+	so= lkcmd,
+	a= bibleq -o clump %{ss}
+
+bq:
+	so= lkcmd,
+	a= bibleq -o clump %{ss}
+
+biblev:
+	so= lkcmd,
+	a= bibleverse %{ss}
+
+bv:
+	so= lkcmd,
+	a= bibleverse %{ss}
+
+sync:
+	a= syncer -b
+
+webcounts:
+	a= webcounts %{ss}
+
+notewire:
+	a= notifier wire %{ss}
+
+whoami:
+	a= echo "host=%P user=%U" 
+
+ipaddr:
+	a= echo "IPaddress=%{ipaddr} peername=%P"
+
+default:
+	so= lkcmd,
+	a= issue
+
+
+# various "commandments"
+
+cmd:
+	so= lkcmd,
+	a= commandment -db %{ss} -a
+
+commandment:
+	so= lkcmd,
+	a= commandment -db %{ss} -a
+
+kingsisrael:
+	so= lkcmd,
+	a= commandment -db %s -a
+
+kingsjudah:
+	so= lkcmd,
+	a= commandment -db %s -a
+
+apostles:
+	so= lkcmd,
+	a= commandment -db %s -a
+
+nineworthies:
+	so= lkcmd,
+	a= commandment -db NineWorthies -a
+
+NineWorthies:
+	so= lkcmd,
+	a= commandment -db %s -a
+
+GrapeVarieties:
+	so= lkcmd,
+	a= commandment -db %s -a
+
+KingsOfEngland:
+	so= lkcmd,
+	a= commandment -db %s -a
+
+
+# special hack
+mscheckup:
+	a= mscheckup ece
+
+
+# junk-type stuff
+
+echoargs:
+	a= echoargs w=%w ss=%{ss} %a
+
+echostuff:
+	access= rc ece,
+	a= echo %V %S %R %N %D s=%s ss=%{ss} ­%a­ long=%w 
+
+svcargs:
+	a= echo '%a'
+
+modlist:
+	a= modlist
+
+logname:
+	access= rc ece,
+	a= ${LOCAL}/bin/logname
+
+env:
+	access= rc ece,
+	a= env,
+	username= admin
+
+enum2:
+	prog= ${TESTSERVERDIR}/enum,
+	a= enum '%a'
+
+peername:
+	a= echo %P
+
+wla:
+	prog= wla
+
+sar:
+	prog= /usr/bin/sar,
+	a= sar 1 2
+
+sysvar:
+	a= ${LOCAL}/bin/sysvar %{ss}
+
+test2:
+	a= echo "O=%{O} OO=%{OO} OC=%{OC}"
+
+testfile:
+	file= svcfile.txt
+
+testpass:
+	pass= /tmp/local/fingers/pass
+
+testerr:
+	prog= /home/dam/bin/testerr
+
+

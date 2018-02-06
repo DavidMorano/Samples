@@ -1,0 +1,18 @@
+
+DAMsvcs {
+	global:
+		daytime ;
+		daytime_start ;
+		daytime_check ;
+		daytime_abort ;
+		daytime_finish ;
+		hello ;
+		hello_start ;
+		hello_check ;
+		hello_abort ;
+		hello_finish ;
+	local:
+		* ;
+} ;
+
+

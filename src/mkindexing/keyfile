@@ -1,0 +1,11 @@
+-minwordlen 3
+-maxwordlen 6
+-eigenwords shalt her she an as to be you that was up us by me not we are their
+-eigenwords from him my his but thee of them ye upon a they for our thou out i
+-eigenwords were unto o the with he thy in and shall is it
+-nkeys 100000
+-tablen 100000
+-sdn /home/dam/src/mkindexing
+testlines.txt:0,17	line this one
+testlines.txt:18,42	item line two this second
+testlines.txt:61,11	three line

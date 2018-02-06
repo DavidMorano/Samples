@@ -1,0 +1,10 @@
+#!/usr/extra/bin/ksh
+# RUNIT
+
+Q="walloons flemish"
+
+z d  
+DB=${LOCAL}/var/txtindexes/documents 
+MKINDEXING_DEBUGFILE=d mkindexing.x -pm mkquery -D=5 2> e -db ${DB} ${Q}
+
+
