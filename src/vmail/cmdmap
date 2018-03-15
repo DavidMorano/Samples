@@ -6,83 +6,123 @@
 # command	keyboard	keysym	param(s)
 #
 
+scanfirst       dec             F
+scanfirst       vt520           F
 scanfirst       screen          F
+scanfirst       mac             F
+scanfirst	vt102		F
+scanfirst	xterm		F
+scanfirst	comnpaq		F
 
+scanlast        dec             L
+scanlast        vt520           L
 scanlast        screen          L
+scanlast        mac             L
+scanlast        vt102           L
+scanlast        xterm           L
+scanlast        compaq          L
 
 scanprev        dec             p               
 scanprev        vt520           p               
 scanprev        screen          p               
 scanprev        mac             p               
 scanprev        vt102		p               
+scanprev        xterm		p               
+scanprev        compaq		p               
 
 scannext        dec             n               
 scannext        vt520           n               
 scannext        screen          n               
 scannext        mac             n               
 scannext        vt102		n               
+scannext        xterm		n               
+scannext        compaq		n               
 
 scanprevmult    dec             P               
 scanprevmult    vt520           P               
 scanprevmult    screen          P               
 scanprevmult    mac             P               
 scanprevmult    vt102           P               
+scanprevmult    xterm           P               
+scanprevmult    compaq          P               
 
 scannextmult    dec             N               
 scannextmult    vt520           N               
 scannextmult    screen          N               
 scannextmult    mac             N               
 scannextmult    vt102		N               
+scannextmult    xterm		N               
+scannextmult    compaq		N               
 
 pagebody        dec             v               
 pagebody        vt520           v               
 pagebody        screen          v               
 pagebody        mac             v               
 pagebody        vt102		v               
+pagebody        xterm		v               
+pagebody        compaq		v               
 
 viewprev        dec             Minus           
 viewprev        vt520           Minus           
 viewprev        screen          Minus           
 viewprev        mac             Minus           
 viewprev        vt102		Minus           
+viewprev        xterm		Minus           
+viewprev        compaq		Minus           
 
 viewnext        dec             Plus            
 viewnext        vt520           Plus            
 viewnext        screen          Plus            
 viewnext        mac             Plus            
 viewnext        vt102		Plus            
+viewnext        xterm		Plus            
+viewnext        compaq		Plus            
 
 scanprev        dec             CurLeft         
 scanprev        vt520           CurLeft         
 scanprev        screen          CurLeft         
 scanprev        mac             CurLeft         
 scanprev        vt102		CurLeft         
+scanprev        xterm		CurLeft         
+scanprev        compaq		CurLeft         
 
 scannext        dec             CurRight        
 scannext        vt520           CurRight        
 scannext        screen          CurRight        
 scannext        mac             CurRight        
 scannext        vt102		CurRight        
+scannext        xterm		CurRight        
+scannext        compaq		CurRight        
 
 viewprev        dec             CurUp           
 viewprev        vt520           CurUp           
 viewprev        screen          CurUp           
 viewprev        mac             CurUp           
 viewprev        vt102		CurUp           
+viewprev        xterm		CurUp           
+viewprev        compaq		CurUp
 
 viewnext        dec             CurDown         
 viewnext        vt520           CurDown         
 viewnext        screen          CurDown         
 viewnext        mac             CurDown         
 viewnext        vt102		CurDown         
+viewnext        xterm		CurDown         
+viewnext        compaq		CurDown         
 
 viewnextmult    dec             Next            
 viewnextmult    vt520           Next            
 viewnextmult    screen          Next            
+viewnextmult    xterm		Next            
+viewnextmult    compaq          Next            
+viewnextmult    compaq          PageDown            
 
 viewprevmult    dec             Previous        
 viewprevmult    vt520           Previous        
 viewprevmult    screen          Previous        
+viewprevmult    xterm 		Previous        
+viewprevmult    compaq          Previous        
+viewprevmult    compaq          PageUp        
 
 viewprev        dec             PF1             
 viewprev        vt520           PF1             
@@ -145,24 +185,28 @@ msgsubject      vt520           F6
 msgsubject      screen          F6              
 msgsubject      mac		F6              
 msgsubject      vt102		F6              
+msgsubject      compaq		F6              
 
 msgdeletenum    dec             F7              
 msgdeletenum    vt520           F7              
 msgdeletenum    screen          F7              
 msgdeletenum    mac		F7              
 msgdeletenum    vt102		F7              
+msgdeletenum    compaq		F7              
 
 msgundeletenum  dec             F8              
 msgundeletenum  vt520           F8              
 msgundeletenum  screen          F8              
 msgundeletenum  mac		F8              
 msgundeletenum  vt102		F8              
+msgundeletenum  compaq		F8              
 
 markspam	dec		F9
 markspam	vt520		F9
 markspam	screen		F9
 markspam	mac		F9
 markspam	vt102		F9
+markspam	compaq		F9
 
 testmsg	dec		F10
 testmsg	vt520		F10
