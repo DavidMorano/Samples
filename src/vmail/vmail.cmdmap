@@ -10,7 +10,6 @@ scanfirst       dec             F
 scanfirst       vt520           F
 scanfirst       screen          F
 scanfirst       mac             F
-scanfirst	vt102		F
 scanfirst	xterm		F
 scanfirst	comnpaq		F
 
@@ -18,7 +17,6 @@ scanlast        dec             L
 scanlast        vt520           L
 scanlast        screen          L
 scanlast        mac             L
-scanlast        vt102           L
 scanlast        xterm           L
 scanlast        compaq          L
 
@@ -26,7 +24,6 @@ scanprev        dec             p
 scanprev        vt520           p               
 scanprev        screen          p               
 scanprev        mac             p               
-scanprev        vt102		p               
 scanprev        xterm		p               
 scanprev        compaq		p               
 
@@ -34,7 +31,6 @@ scannext        dec             n
 scannext        vt520           n               
 scannext        screen          n               
 scannext        mac             n               
-scannext        vt102		n               
 scannext        xterm		n               
 scannext        compaq		n               
 
@@ -42,7 +38,6 @@ scanprevmult    dec             P
 scanprevmult    vt520           P               
 scanprevmult    screen          P               
 scanprevmult    mac             P               
-scanprevmult    vt102           P               
 scanprevmult    xterm           P               
 scanprevmult    compaq          P               
 
@@ -50,7 +45,6 @@ scannextmult    dec             N
 scannextmult    vt520           N               
 scannextmult    screen          N               
 scannextmult    mac             N               
-scannextmult    vt102		N               
 scannextmult    xterm		N               
 scannextmult    compaq		N               
 
@@ -58,7 +52,6 @@ pagebody        dec             v
 pagebody        vt520           v               
 pagebody        screen          v               
 pagebody        mac             v               
-pagebody        vt102		v               
 pagebody        xterm		v               
 pagebody        compaq		v               
 
@@ -66,7 +59,6 @@ viewprev        dec             Minus
 viewprev        vt520           Minus           
 viewprev        screen          Minus           
 viewprev        mac             Minus           
-viewprev        vt102		Minus           
 viewprev        xterm		Minus           
 viewprev        compaq		Minus           
 
@@ -74,7 +66,6 @@ viewnext        dec             Plus
 viewnext        vt520           Plus            
 viewnext        screen          Plus            
 viewnext        mac             Plus            
-viewnext        vt102		Plus            
 viewnext        xterm		Plus            
 viewnext        compaq		Plus            
 
@@ -82,7 +73,6 @@ scanprev        dec             CurLeft
 scanprev        vt520           CurLeft         
 scanprev        screen          CurLeft         
 scanprev        mac             CurLeft         
-scanprev        vt102		CurLeft         
 scanprev        xterm		CurLeft         
 scanprev        compaq		CurLeft         
 
@@ -90,7 +80,6 @@ scannext        dec             CurRight
 scannext        vt520           CurRight        
 scannext        screen          CurRight        
 scannext        mac             CurRight        
-scannext        vt102		CurRight        
 scannext        xterm		CurRight        
 scannext        compaq		CurRight        
 
@@ -98,7 +87,6 @@ viewprev        dec             CurUp
 viewprev        vt520           CurUp           
 viewprev        screen          CurUp           
 viewprev        mac             CurUp           
-viewprev        vt102		CurUp           
 viewprev        xterm		CurUp           
 viewprev        compaq		CurUp
 
@@ -106,7 +94,6 @@ viewnext        dec             CurDown
 viewnext        vt520           CurDown         
 viewnext        screen          CurDown         
 viewnext        mac             CurDown         
-viewnext        vt102		CurDown         
 viewnext        xterm		CurDown         
 viewnext        compaq		CurDown         
 
@@ -128,13 +115,13 @@ viewprev        dec             PF1
 viewprev        vt520           PF1             
 viewprev        screen          PF1             
 viewprev        mac             F1              
-viewprev        vt102		PF1              
+viewprev        xterm		PF1              
 
 viewnext        dec             PF2             
 viewnext        vt520           PF2             
 viewnext        screen          PF2             
 viewnext        mac             F2              
-viewnext        vt102		PF2              
+viewnext        xterm		PF2              
 
 scanfirst       dec             F17             
 scanfirst       vt520           F17             
@@ -156,13 +143,13 @@ scanprev        dec             PF3
 scanprev        vt520           PF3             
 scanprev        screen          PF3             
 scanprev        mac             F3              
-scanprev        vt102		PF3              
+scanprev        xterm		PF3              
 
 scannext        dec             PF4             
 scannext        vt520           PF4             
 scannext        screen          PF4             
 scannext	mac             F4              
-scannext	vt102		PF4              
+scannext	xterm		PF4              
 
 help            dec             Help            
 help            vt520           Help            
@@ -179,39 +166,43 @@ searchnext      screen          Find
 pagebody        dec             Do              
 pagebody        vt520           Do              
 pagebody        screen          Do              
+pagebody	mac		F12
+pagebody	xtermc		F12
+pagebody	compaq		F12
 
 msgsubject      dec             F6              
 msgsubject      vt520           F6              
 msgsubject      screen          F6              
 msgsubject      mac		F6              
-msgsubject      vt102		F6              
-msgsubject      compaq		F6              
+msgsubject      xterm		F6              
+msgsubject      compaq		F5
 
 msgdeletenum    dec             F7              
 msgdeletenum    vt520           F7              
 msgdeletenum    screen          F7              
 msgdeletenum    mac		F7              
-msgdeletenum    vt102		F7              
-msgdeletenum    compaq		F7              
+msgdeletenum    xterm		F7              
+msgdeletenum    compaq		F6
 
 msgundeletenum  dec             F8              
 msgundeletenum  vt520           F8              
 msgundeletenum  screen          F8              
 msgundeletenum  mac		F8              
-msgundeletenum  vt102		F8              
-msgundeletenum  compaq		F8              
+msgundeletenum  xterm		F8              
+msgundeletenum  compaq		F7
 
 markspam	dec		F9
 markspam	vt520		F9
 markspam	screen		F9
 markspam	mac		F9
-markspam	vt102		F9
-markspam	compaq		F9
+markspam	xterm		F9
+markspam	compaq		F8
 
 testmsg	dec		F10
 testmsg	vt520		F10
 testmsg	screen		F10
 testmsg	mac		F10
-testmsg	vt102		F10
+testmsg	xterm		F10
+testmsg	compaw		F9
 
 
